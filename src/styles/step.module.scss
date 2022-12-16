@@ -1,0 +1,28 @@
+@import './colors.scss';
+
+.Step {
+  .mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+
+    div {
+      width: 2rem;
+      height: 2rem;
+      line-height: 1.8rem;
+      border-radius: 50%;
+      border: 1px solid $white;
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: bold;
+      color: $white;
+
+      &.active {
+        border-color: $lighter-blue;
+        background-color: $lighter-blue;
+        color: $dark-blue;
+      }
+    }
+  }
+}
