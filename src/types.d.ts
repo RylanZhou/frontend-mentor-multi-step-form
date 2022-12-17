@@ -3,6 +3,7 @@ interface PlanItem {
   monthlyPrice: string;
   yearlyPrice: string;
   subtext?: string;
+  icon: string;
 }
 
 interface AddonItem {

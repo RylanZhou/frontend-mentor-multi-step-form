@@ -1,8 +1,9 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FormContext } from '../FormContext';
 
-import styles from '../styles/form.module.scss';
 import StepButton from './StepButton';
+
+import styles from '../styles/form.module.scss';
 
 export default function Step1Form() {
   const { step1, saveStep1, stepForward } = useContext(FormContext) as FormContextType;
@@ -49,7 +50,7 @@ export default function Step1Form() {
         <h1>Personal info</h1>
         <h3>Please provide your name, email address, and phone number.</h3>
 
-        <div>
+        <div className={styles.input}>
           <label>
             Name
             {!!errors.name && <span className={styles.error}>{errors.name}</span>}
@@ -64,7 +65,8 @@ export default function Step1Form() {
             onChange={({ target }) => handleChange(target.name, target.value)}
           />
         </div>
-        <div>
+
+        <div className={styles.input}>
           <label>
             Email Address
             {!!errors.email && <span className={styles.error}>{errors.email}</span>}
@@ -81,7 +83,8 @@ export default function Step1Form() {
             }
           />
         </div>
-        <div>
+
+        <div className={styles.input}>
           <label>
             Phone Number
             {!!errors.phone && <span className={styles.error}>{errors.phone}</span>}

@@ -21,7 +21,7 @@ export default function StepButton({
     <section className={styles['step-button']}>
       {backButtonVisible ? (
         <button className={styles.back} onClick={() => stepBack && stepBack()}>
-          Back
+          Go Back
         </button>
       ) : (
         <button style={{ visibility: 'hidden' }}></button>
