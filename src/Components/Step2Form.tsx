@@ -4,7 +4,7 @@ import { plans } from '../constants';
 import StepButton from './StepButton';
 
 import styles from '../styles/form.module.scss';
-import '../styles/switch.scss';
+import '../styles/input.scss';
 
 export default function Step2Form() {
   const { step2, saveStep2, stepForward, stepBack } = useContext(FormContext) as FormContextType;
