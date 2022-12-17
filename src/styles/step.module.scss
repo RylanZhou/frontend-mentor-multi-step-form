@@ -6,23 +6,64 @@
     align-items: center;
     justify-content: center;
     gap: 1em;
+  }
 
-    div {
-      width: 2rem;
-      height: 2rem;
-      line-height: 1.8rem;
-      border-radius: 50%;
-      border: 1px solid $white;
-      text-align: center;
-      font-size: 0.8rem;
-      font-weight: bold;
-      color: $white;
+  .desktop {
+    display: none;
+    height: 100%;
+    width: 275px;
+    padding: 2.5rem 2rem;
 
-      &.active {
-        border-color: $lighter-blue;
-        background-color: $lighter-blue;
-        color: $dark-blue;
+    li {
+      display: flex;
+      margin-bottom: 2rem;
+      gap: 1rem;
+
+      .text {
+        color: $white;
+        text-transform: uppercase;
+
+        span {
+          display: block;
+          font-size: 0.7rem;
+          color: $gray;
+        }
+
+        h3 {
+          margin-top: 4px;
+          letter-spacing: 1px;
+          font-size: 0.9rem;
+          color: $light-gray;
+        }
       }
+    }
+  }
+
+  .indicator {
+    width: 2rem;
+    height: 2rem;
+    line-height: 1.8rem;
+    border-radius: 50%;
+    border: 1px solid $white;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: $white;
+
+    &.active {
+      border-color: $lighter-blue;
+      background-color: $lighter-blue;
+      color: $dark-blue;
+    }
+  }
+
+  @media screen and (min-width: 675px) {
+    .mobile {
+      display: none;
+    }
+
+    .desktop {
+      display: block;
     }
   }
 }

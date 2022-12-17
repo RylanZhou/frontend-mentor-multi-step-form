@@ -1,49 +1,37 @@
 @import './colors.scss';
 
 .App {
-  display: flex;
-  flex-direction: column;
   height: 100dvh;
+  width: 100%;
 
   main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1;
+    height: 100%;
     padding-top: 2rem;
 
     background-image: url(../assets/bg-sidebar-mobile.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-color: $lighter-blue;
-
-    .form-container {
-      min-height: 500px;
-      margin: 2.5rem 1rem 0 1rem;
-      padding: 2rem 1.5rem;
-      border-radius: 8px;
-
-      background-color: $white;
-    }
   }
 
-  section {
-    display: flex;
-    justify-content: space-between;
+  @media screen and (min-width: 675px) {
+    max-width: 950px;
+    max-height: 600px;
     padding: 1rem;
+    border-radius: 12px;
+    background-color: $white;
 
-    button {
-      outline: none;
-      border: none;
-      background: none;
-
-      &.next {
-        padding: 0.6rem 0.8rem;
-        border-radius: 2px;
-        font-size: 0.8rem;
-        color: $white;
-        background-color: $dark-blue;
-      }
+    main {
+      flex-direction: row;
+      align-items: flex-start;
+      padding-top: 0;
+      background-image: url(../assets/bg-sidebar-desktop.svg);
+      // background-size: min(calc(30vw + 2rem), 336px) 100%;
+      background-size: contain;
+      background-color: $white;
     }
   }
 }

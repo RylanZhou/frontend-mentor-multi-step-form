@@ -11,16 +11,8 @@ function App() {
       <FormProvider>
         <main>
           <Step />
-
-          <div className={styles['form-container']}>
-            <Step1Form />
-          </div>
+          <Step1Form />
         </main>
-
-        <section>
-          <button className={styles.back}>Back</button>
-          <button className={styles.next}>Next Step</button>
-        </section>
       </FormProvider>
     </div>
   );

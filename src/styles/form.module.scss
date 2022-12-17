@@ -1,6 +1,13 @@
 @import './colors.scss';
 
-.form {
+.form-container {
+  // min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+
   h1 {
     font-size: 1.6rem;
     color: $dark-blue;
@@ -9,9 +16,107 @@
   h3 {
     width: 80%;
     margin-top: 1rem;
+    margin-bottom: 1rem;
     line-height: 1.5;
     font-size: 1rem;
     font-weight: normal;
     color: $dark-gray;
+  }
+
+  .form {
+    margin: 2.5rem 1rem 0 1rem;
+    padding: 2rem 1.5rem;
+    border-radius: 8px;
+    background-color: $white;
+
+    div {
+      margin: 1rem 0;
+
+      label {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 4px;
+        font-size: 0.8rem;
+        color: $dark-blue;
+
+        .error {
+          font-weight: bold;
+          color: $red;
+        }
+      }
+
+      input {
+        display: block;
+        width: 100%;
+        padding: 0.8rem 1rem;
+        border: 1px solid $gray;
+        border-radius: 4px;
+        outline: none;
+        font-size: 1rem;
+        font-weight: bold;
+        color: $dark-blue;
+        cursor: pointer;
+        transition: border 0.5s;
+
+        &::placeholder {
+          color: $dark-gray;
+          font-weight: 500;
+        }
+
+        &:focus {
+          border-color: $dark-blue;
+        }
+
+        &.error {
+          border-color: $red;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 675px) {
+    align-items: center;
+    padding-bottom: 1rem;
+
+    .form {
+      width: 70%;
+      min-width: 450px;
+      margin-top: 0;
+    }
+  }
+}
+
+.step-button {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+  margin-top: auto;
+  background-color: $white;
+
+  button {
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.5s;
+
+    &.next {
+      padding: 0.8rem 1rem;
+      border-radius: 4px;
+      color: $white;
+      background-color: $dark-blue;
+
+      &:disabled {
+        background-color: $dark-gray;
+      }
+    }
+  }
+
+  @media screen and (min-width: 675px) {
+    width: 70%;
+    min-width: 450px;
+    padding: 0 1.5rem;
   }
 }
