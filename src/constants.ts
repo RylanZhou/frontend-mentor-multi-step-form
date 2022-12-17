@@ -35,7 +35,7 @@ export const addons: AddonItem[] = [
   },
   {
     title: 'Larger storage',
-    description: 'Extra1TB of cloud save',
+    description: 'Extra 1TB of cloud save',
     monthlyPrice: 2,
     yearlyPrice: 20,
   },

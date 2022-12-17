@@ -13,7 +13,10 @@ export default function Step() {
       <div className={styles.mobile}>
         {stepTitles.map((each, index) => (
           <div
-            className={`${styles.indicator} ${step === index + 1 ? styles.active : ''}`}
+            className={`${styles.indicator} ${
+              // Step 4's indicator should be active when current step is either at 4 or 5
+              step === index + 1 || (index === 3 && step >= 4) ? styles.active : ''
+            }`}
             key={index}
           >
             {index + 1}
@@ -25,7 +28,9 @@ export default function Step() {
         {stepTitles.map((each, index) => (
           <li key={index}>
             <div
-              className={`${styles.indicator} ${step === index + 1 ? styles.active : ''}`}
+              className={`${styles.indicator} ${
+                step === index + 1 || (index === 3 && step >= 4) ? styles.active : ''
+              }`}
               key={index}
             >
               {index + 1}
