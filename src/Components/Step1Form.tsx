@@ -97,7 +97,7 @@ export default function Step1Form() {
             value={form.phone}
             required
             placeholder="e.g. +1 234 567 890"
-            onChange={({ target }) => handleChange(target.name, target.value, /^\+\d+$/)}
+            onChange={({ target }) => handleChange(target.name, target.value, /^\+?\d+$/)}
           />
         </div>
       </form>
