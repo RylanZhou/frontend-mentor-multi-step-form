@@ -30,6 +30,7 @@
     background-color: $white;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.02);
 
+    // Step 1
     .input {
       margin: 1rem 0;
 
@@ -74,6 +75,7 @@
       }
     }
 
+    // Step 2
     .plans {
       display: flex;
       flex-direction: column;
@@ -117,6 +119,7 @@
       }
     }
 
+    // Step 3
     .addons {
       display: flex;
       flex-direction: column;
@@ -169,6 +172,82 @@
           font-size: 0.9rem;
           color: $blue;
         }
+      }
+    }
+
+    // Step 4
+    .summary {
+      padding: 2rem;
+      border-radius: 4px;
+      background-color: $light-gray;
+
+      .plan {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .text {
+          h4 {
+            margin-bottom: 4px;
+            color: $dark-blue;
+          }
+
+          a {
+            color: $dark-gray;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: color 0.4s;
+
+            &:hover {
+              color: $blue;
+            }
+          }
+        }
+
+        .price {
+          color: $dark-blue;
+          font-weight: bold;
+        }
+      }
+
+      hr {
+        height: 1px;
+        margin: 1.5rem 0;
+        border: none;
+        background-color: $gray;
+      }
+
+      .addons-summary {
+        list-style: none;
+
+        li {
+          display: flex;
+          margin-bottom: 1rem;
+          justify-content: space-between;
+          color: $dark-gray;
+          font-size: 0.9rem;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          .price {
+            color: $dark-blue;
+          }
+        }
+      }
+    }
+
+    .total {
+      display: flex;
+      justify-content: space-between;
+      padding: 1.5rem 2rem;
+      color: $dark-gray;
+
+      .price {
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: $blue;
       }
     }
 
@@ -261,6 +340,18 @@
       border-radius: 4px;
       color: $white;
       background-color: $dark-blue;
+
+      &:hover {
+        background-color: #08438b;
+      }
+
+      &.confirm {
+        background-color: $blue;
+
+        &:hover {
+          background-color: $light-blue;
+        }
+      }
 
       &:disabled {
         background-color: $dark-gray;

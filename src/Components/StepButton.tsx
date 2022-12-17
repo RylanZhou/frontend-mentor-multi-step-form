@@ -4,16 +4,20 @@ import styles from '../styles/form.module.scss';
 
 interface StepButtonProps {
   backButtonVisible: boolean;
-  nextButtonVisible: boolean;
-  nextButtonDisabled: boolean;
+  isConfirm?: boolean;
+  nextButtonVisible?: boolean;
+  nextButtonDisabled?: boolean;
+  nextButtonText?: string;
   stepBack?: () => void;
   stepForward?: () => void;
 }
 
 export default function StepButton({
   backButtonVisible,
+  isConfirm,
   nextButtonVisible,
   nextButtonDisabled,
+  nextButtonText,
   stepBack,
   stepForward,
 }: StepButtonProps) {
@@ -29,11 +33,11 @@ export default function StepButton({
 
       {nextButtonVisible ? (
         <button
-          className={styles.next}
+          className={`${styles.next} ${isConfirm ? styles.confirm : ''}`}
           disabled={nextButtonDisabled}
           onClick={() => stepForward && stepForward()}
         >
-          Next Step
+          {isConfirm ? 'Confirm' : nextButtonText || 'Next Step'}
         </button>
       ) : (
         <button style={{ visibility: 'hidden' }}></button>

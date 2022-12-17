@@ -1,7 +1,7 @@
 interface PlanItem {
   title: string;
-  monthlyPrice: string;
-  yearlyPrice: string;
+  monthlyPrice: number;
+  yearlyPrice: number;
   subtext?: string;
   icon: string;
 }
@@ -9,8 +9,8 @@ interface PlanItem {
 interface AddonItem {
   title: string;
   description: string;
-  monthlyPrice: string;
-  yearlyPrice: string;
+  monthlyPrice: number;
+  yearlyPrice: number;
 }
 
 interface FormDataType {
@@ -39,6 +39,7 @@ type FormContextType = FormDataType & {
   saveStep1: (form: FormDataType['step1']) => void;
   saveStep2: (form: FormDataType['step2']) => void;
   saveStep3: (form: FormDataType['step3']) => void;
+  goToStep: (step: number) => void;
   stepBack: () => void;
   stepForward: () => void;
 };

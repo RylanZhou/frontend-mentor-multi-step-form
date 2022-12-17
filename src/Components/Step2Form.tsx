@@ -28,7 +28,9 @@ export default function Step2Form() {
               <div className={styles.text}>
                 <div className={styles.title}>{each.title}</div>
                 <div className={styles.price}>
-                  {step2.billingPeriod === 'monthly' ? each.monthlyPrice : each.yearlyPrice}
+                  {step2.billingPeriod === 'monthly'
+                    ? `$${each.monthlyPrice}/mo`
+                    : `$${each.yearlyPrice}/yr`}
                 </div>
                 {step2.billingPeriod === 'yearly' && (
                   <div className={styles.sub}>{each.subtext}</div>

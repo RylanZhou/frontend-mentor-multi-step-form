@@ -26,6 +26,7 @@ export default function FormProvider({ children }: React.PropsWithChildren) {
         saveStep1: setStep1,
         saveStep2: setStep2,
         saveStep3: setStep3,
+        goToStep: setStep,
         stepForward: () => setStep((step) => step + 1),
         stepBack: () => setStep((step) => step - 1),
       }}

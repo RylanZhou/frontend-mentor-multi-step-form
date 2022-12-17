@@ -4,6 +4,7 @@ import { FormContext } from '../FormContext';
 import Step1Form from './Step1Form';
 import Step2Form from './Step2Form';
 import Step3Form from './Step3Form';
+import Step4Form from './Step4Form';
 
 export default function StepFormRender() {
   const { step } = useContext(FormContext) as FormContextType;
@@ -15,6 +16,8 @@ export default function StepFormRender() {
       return <Step2Form />;
     case 3:
       return <Step3Form />;
+    case 4:
+      return <Step4Form />;
 
     default:
       return null;

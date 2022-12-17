@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { FormContext } from '../FormContext';
 import { addons } from '../constants';
 import StepButton from './StepButton';
@@ -50,7 +50,9 @@ export default function Step2Form() {
                 <div className={styles.description}>{each.description}</div>
               </div>
               <div className={styles.price}>
-                {step2.billingPeriod === 'monthly' ? each.monthlyPrice : each.yearlyPrice}
+                {step2.billingPeriod === 'monthly'
+                  ? `+$${each.monthlyPrice}/mo`
+                  : `+$${each.yearlyPrice}/yr`}
               </div>
             </li>
           ))}
