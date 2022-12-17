@@ -33,23 +33,27 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github]()
-- Live Site URL: [Vercel]()
+- Solution URL: [Github](https://github.com/RylanZhou/frontend-mentor-multi-step-form)
+- Live Site URL: [Vercel](https://frontend-mentor-multi-step-form-nu.vercel.app/)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
 - Scss
 - Flexbox
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
+- React Context Hook
 - TypeScript
 
 ### What I implemented
 
-1. Use `container-type: inline-size` to enable the new container query feature in CSS. Child components can then use `cqw` and `cqh` as the unit referring to container's width and height. I use this method to dynamically change the `<h1>` font size according to the screen.
+1. Use the recently released css unit `dvw` and `dvh` to set the width and height to automatically make the element fit in any viewport size.
 
-2. Write `mask` elements as early as possible so that it will not block pointer event from penetrating.
+2. Use `createContext` and `useContext()` hook to store and access state in different forms and to control current step.
+
+3. For customized checkbox/switch, use a hidden `<input>` element to control the value, then create the visual checkbox/switch by styling a `<span>` or a `<label>` element.
+
+4. It is a good idea to use `React.lazy` to render different forms until they are needed. Together with `lazy`, should use `<Suspend fallback={MyComponent}>` to handle when the actual component is being loaded.
